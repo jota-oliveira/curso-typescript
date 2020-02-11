@@ -1,0 +1,24 @@
+{
+  "name": "curso-typescript",
+  "version": "1.0.0",
+  "description": "Curso de TypeScript disponível no Alura.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc",
+    "start": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jota-info/curso-typescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jota-info/curso-typescript/issues"
+  },
+  "homepage": "https://github.com/jota-info/curso-typescript#readme",
+  "devDependencies": {
+    "typescript": "^2.3.2"
+  }
+}
