@@ -1,7 +1,7 @@
 System.register(["./controllers/NegociacaoController"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var NegociacaoController_1, controller, initEventsFromController;
+    var NegociacaoController_1, controller, form, botaoImportar;
     return {
         setters: [
             function (NegociacaoController_1_1) {
@@ -10,9 +10,12 @@ System.register(["./controllers/NegociacaoController"], function (exports_1, con
         ],
         execute: function () {
             controller = new NegociacaoController_1.NegociacaoController();
-            initEventsFromController = document.querySelector(".form");
-            initEventsFromController
+            form = document.querySelector(".form");
+            botaoImportar = document.querySelector("#botao-importa");
+            form
                 .addEventListener("submit", controller.adiciona.bind(controller));
+            botaoImportar
+                .addEventListener("click", controller.importaDados.bind(controller));
         }
     };
 });
