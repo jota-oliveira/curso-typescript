@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
+    "lib": ["es6", "dom", "es2017"],
     "target": "es6",
     "outDir": "app/js",
     "noEmitOnError": true,
     "noImplicitAny": true,
     "removeComments": true,
-    "module": "system"
+    "module": "system",
+    "strictNullChecks": true,
+    "experimentalDecorators": true
   },
   "include": [
       "app/ts/**/*"
