@@ -6,6 +6,8 @@ System.register([], function (exports_1, context_1) {
             let timer = 0;
             const metodo = descriptor.value;
             descriptor.value = function (...args) {
+                if (event)
+                    event.preventDefault();
                 clearTimeout(timer);
                 timer = setTimeout(() => metodo.apply(this, args), milessegundos);
             };
