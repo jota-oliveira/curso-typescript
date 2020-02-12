@@ -30,9 +30,6 @@ System.register(["../views/index", "../models/index", "../helpers/decorators/ind
                         const weekends = [DiaDaSemana.Sabado, DiaDaSemana.Domingo];
                         return !weekends.includes(data.getDay());
                     };
-                    this._inputData = document.querySelector('#data');
-                    this._inputQuantidade = document.querySelector('#quantidade');
-                    this._inputValor = document.querySelector('#valor');
                     this._negociacoesView.update(this._negociacoes);
                 }
                 adiciona(event) {
@@ -49,8 +46,14 @@ System.register(["../views/index", "../models/index", "../helpers/decorators/ind
                 }
             };
             __decorate([
-                index_3.logTempoDeExecucao(true)
-            ], NegociacaoController.prototype, "adiciona", null);
+                index_3.domInject('#data')
+            ], NegociacaoController.prototype, "_inputData", void 0);
+            __decorate([
+                index_3.domInject('#quantidade')
+            ], NegociacaoController.prototype, "_inputQuantidade", void 0);
+            __decorate([
+                index_3.domInject('#valor')
+            ], NegociacaoController.prototype, "_inputValor", void 0);
             exports_1("NegociacaoController", NegociacaoController);
             (function (DiaDaSemana) {
                 DiaDaSemana[DiaDaSemana["Domingo"] = 0] = "Domingo";

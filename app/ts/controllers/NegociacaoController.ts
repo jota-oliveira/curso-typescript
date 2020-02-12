@@ -1,25 +1,26 @@
 import { NegociacoesView, MensagemView } from '../views/index';
 import { Negociacoes, Negociacao } from '../models/index';
-import { logTempoDeExecucao } from '../helpers/decorators/index';
+import { domInject } from '../helpers/decorators/index';
 
 export class NegociacaoController {
+
+    @domInject('#data')
     private _inputData: HTMLInputElement;
+
+    @domInject('#quantidade')
     private _inputQuantidade: HTMLInputElement;
+
+    @domInject('#valor')
     private _inputValor: HTMLInputElement;
+
     private _negociacoes: Negociacoes = new Negociacoes();
     private _negociacoesView: NegociacoesView = new NegociacoesView('#negociacoesView', true);
     private _mensagemView: MensagemView = new MensagemView('#mensagemView', true);
     
     constructor() {
-        /* Convertendo tipo genérico Element para HTMLInputElement */
-        /* Necessário apenas para sair do genérico para mais explícito */
-        this._inputData = <HTMLInputElement>document.querySelector('#data');
-        this._inputQuantidade = <HTMLInputElement>document.querySelector('#quantidade');
-        this._inputValor = <HTMLInputElement>document.querySelector('#valor');
         this._negociacoesView.update(this._negociacoes);
     }
 
-    @logTempoDeExecucao(true)
     public adiciona(event: Event): void {
         event.preventDefault();
 

@@ -1,4 +1,4 @@
-export function logTempoDeExecucao(emSegundos: boolean = false) {
+export function logTempoDeExecucao(emSegundos: boolean = false): Function {
     return function(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
         
         /* Método que o decorator está sendo posicionado */
