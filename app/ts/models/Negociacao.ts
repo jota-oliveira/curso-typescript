@@ -1,24 +1,16 @@
 export class Negociacao {
-
+    /* 
+    Se nem mesmo acesso externo essas propriedades podem ter,
+    deve ser usado o private, se for realmente apenas uma restrição
+    de escrita, pode ser usado o readonly.
+    */
     constructor(
-        private _data: Date,
-        private _quantidade: number,
-        private _valor: number
+        readonly data: Date,
+        readonly quantidade: number,
+        readonly valor: number
     ) {}
 
-    get data() {
-        return this._data;
-    }
-
-    get quantidade() {
-        return this._quantidade;
-    }
-
-    get valor() {
-        return this._valor;
-    }
-
     get volume() {
-        return this._quantidade * this._valor;
+        return this.quantidade * this.valor;
     }
 }
