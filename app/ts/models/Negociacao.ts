@@ -1,4 +1,6 @@
-export class Negociacao {
+import { Imprimivel } from './Imprimivel';
+
+export class Negociacao extends Imprimivel {
     /* 
     Se nem mesmo acesso externo essas propriedades podem ter,
     deve ser usado o private, se for realmente apenas uma restrição
@@ -8,7 +10,9 @@ export class Negociacao {
         readonly data: Date,
         readonly quantidade: number,
         readonly valor: number
-    ) {}
+    ) {
+        super();
+    }
 
     get volume() {
         return this.quantidade * this.valor;
