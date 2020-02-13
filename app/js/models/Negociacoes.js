@@ -8,6 +8,7 @@ System.register([], function (exports_1, context_1) {
             Negociacoes = class Negociacoes {
                 constructor() {
                     this._negociacoes = [];
+                    this.ehIgual = (negociacoes) => JSON.stringify(this._negociacoes) === JSON.stringify(negociacoes);
                 }
                 adiciona(negociacao) {
                     this._negociacoes.push(negociacao);
